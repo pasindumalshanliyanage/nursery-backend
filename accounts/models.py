@@ -23,6 +23,12 @@ class Attendance(models.Model):
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
     date = models.DateField()
     present = models.BooleanField(default=False)
+    class Meta:
+        unique_together = ('employee', 'date')  # Prevent duplicate attendance for same day
+
+    def __str__(self):
+        status = "Present" if self.present else "Absent"
+        return f"{self.employee.user.username} - {self.date} - {status}"
 
 class FinancialTransaction(models.Model):
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
