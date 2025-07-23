@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'accounts',
     'corsheaders',
-    'nursery_app'
+    'nursery_app',
 ]
 
 MIDDLEWARE = [
