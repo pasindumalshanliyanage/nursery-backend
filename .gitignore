@@ -1,0 +1,13 @@
+env/
+__pycache__/
+*.pyc
+db.sqlite3
+*.sqlite3
+*.log
+*.pot
+*.pyc
+*.swp
+*.DS_Store
+*.egg-info/
+*.egg
+*.coverage
