@@ -42,9 +42,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
+    'rest_framework',
+    'accounts',  # your custom app
+]
 
     
-]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
