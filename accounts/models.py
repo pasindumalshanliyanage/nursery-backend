@@ -29,8 +29,20 @@ class FinancialTransaction(models.Model):
     amount = models.DecimalField(max_digits=10, decimal_places=2)
     date = models.DateField()
     description = models.TextField()
-
 class PesticideSchedule(models.Model):
-    pesticide_name = models.CharField(max_length=100)
-    application_date = models.DateField()
-    next_application_date = models.DateField()
+    name = models.CharField(max_length=100)
+    date = models.DateField()
+    description = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.name
+# accounts/models.py
+
+class DailySalary(models.Model):
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
+    date = models.DateField()
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    is_half_day = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.employee.name} - {self.date} - {self.amount}"
